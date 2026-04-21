@@ -14,7 +14,7 @@ export default function Team() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-80px" });
   return (
-    <section id="team" className="py-20 md:py-28 bg-brand-cream" ref={ref}>
+    <section id="team" className="py-20 md:py-28 section-surface-ivory" ref={ref}>
       <div className="max-w-7xl mx-auto px-4 md:px-8">
         <motion.div className="text-center mb-16" initial={{ opacity: 0, y: 24 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6 }}>
           <span className="text-xs font-sans font-medium tracking-widest uppercase text-brand-bronze block mb-4">The Experts</span>
@@ -26,7 +26,7 @@ export default function Team() {
             <span className="text-xs font-sans font-medium tracking-widest uppercase text-brand-bronze mb-4">Founder & Lead Surgeon</span>
             <h3 className="font-display text-3xl md:text-4xl text-brand-foreground mb-2">{teamMembers[0].name}</h3>
             <p className="text-brand-muted mb-6">{teamMembers[0].role}</p>
-            <p className="text-brand-foreground leading-relaxed mb-8">Dr. Mendieta is one of the most recognized names in non-surgical aesthetics globally. Trained at Harvard and the Royal College of Surgeons in England, he has spent 25+ years perfecting natural-looking rejuvenation.</p>
+            <p className="text-brand-foreground leading-relaxed mb-8">Dr. Mendieta is one of the most recognized names in non-surgical aesthetics globally. Trained at Harvard and the Royal College of Surgeons in England, he has spent 25+ years perfecting natural-looking rejuvenation for patients across Miami.</p>
             <div className="flex flex-col gap-3">
               {credentials.map((cred) => { const Icon = cred.icon; return (<div key={cred.label} className="flex items-center gap-3"><div className="w-8 h-8 rounded-full bg-brand-bronze/10 flex items-center justify-center shrink-0"><Icon className="w-4 h-4 text-brand-bronze" strokeWidth={1.5} /></div><span className="text-sm text-brand-foreground">{cred.label}</span></div>); })}
             </div>

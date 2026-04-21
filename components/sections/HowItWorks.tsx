@@ -2,6 +2,7 @@
 import React, { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { MessageSquare, FlaskConical, Sparkles } from "lucide-react";
+import Link from "next/link";
 import { staggerContainer } from "@/lib/animations";
 const steps = [
   { step: "01", icon: MessageSquare, title: "Free Consultation", body: "Meet with our team — in person or virtually. We listen to your goals, assess your needs, and answer every question with zero pressure." },
@@ -34,7 +35,7 @@ export default function HowItWorks() {
           })}
         </motion.div>
         <motion.div className="text-center mt-14" initial={{ opacity: 0, y: 16 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6, delay: 0.5 }}>
-          <a href="#booking" className="inline-flex items-center gap-2 bg-brand-bronze hover:bg-brand-bronze-dark text-white font-medium rounded-full px-8 py-3 transition-all duration-300 shadow-md hover:shadow-xl hover:-translate-y-0.5">Start with a Free Consult</a>
+          <Link href="/?booking=1" scroll={false} className="inline-flex items-center gap-2 bg-brand-bronze hover:bg-brand-bronze-dark text-white font-medium rounded-full px-8 py-3 transition-all duration-300 shadow-md hover:shadow-xl hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-bronze-light focus-visible:ring-offset-2 focus-visible:ring-offset-brand-espresso">Book Free Consultation</Link>
         </motion.div>
       </div>
     </section>

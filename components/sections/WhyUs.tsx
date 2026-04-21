@@ -12,12 +12,12 @@ export default function WhyUs() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-80px" });
   return (
-    <section className="py-20 md:py-28 bg-brand-muted-bg" ref={ref}>
+    <section className="py-20 md:py-28 section-surface-soft" ref={ref}>
       <div className="max-w-7xl mx-auto px-4 md:px-8">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <motion.div className="relative rounded-2xl overflow-hidden aspect-[4/5] bg-brand-beige" initial={{ opacity: 0, x: -32 }} animate={isInView ? { opacity: 1, x: 0 } : {}} transition={{ duration: 0.7 }}>
             <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=900&q=80')" }} />
-            <div className="absolute bottom-6 left-6 right-6 bg-white/95 backdrop-blur-sm rounded-xl p-4 shadow-warm">
+            <div className="absolute bottom-6 left-6 right-6 bg-white/95 rounded-xl p-4 shadow-warm">
               <p className="text-xs font-sans font-medium tracking-widest uppercase text-brand-muted mb-1">Lead Physician</p>
               <p className="font-display text-xl text-brand-foreground">Dr. Constantino Mendieta, MD</p>
               <p className="text-sm text-brand-muted mt-0.5">Board-Certified Plastic Surgeon · Harvard-Trained</p>

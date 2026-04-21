@@ -19,14 +19,14 @@ export default function Testimonials() {
   const next = () => setCurrent((c) => (c + 1) % testimonials.length);
   const visible = [testimonials[current % testimonials.length], testimonials[(current + 1) % testimonials.length], testimonials[(current + 2) % testimonials.length]];
   return (
-    <section className="py-20 md:py-28 bg-brand-muted-bg" ref={ref}>
+    <section className="py-20 md:py-28 section-surface-soft" ref={ref}>
       <div className="max-w-7xl mx-auto px-4 md:px-8">
         <motion.div className="text-center mb-14" initial={{ opacity: 0, y: 24 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6 }}>
           <span className="text-xs font-sans font-medium tracking-widest uppercase text-brand-bronze block mb-4">Client Stories</span>
           <h2 className="font-display text-4xl md:text-5xl text-brand-foreground mb-4">Real People, Real Results</h2>
           <div className="flex items-center justify-center gap-2">
             <div className="flex">{[...Array(5)].map((_, i) => <Star key={i} className="w-5 h-5 fill-brand-bronze text-brand-bronze" />)}</div>
-            <span className="text-brand-muted">4.9 average · 200+ reviews</span>
+            <span className="text-brand-muted">4.9 on Google Reviews · 200+ reviews</span>
           </div>
         </motion.div>
         <div className="hidden md:grid grid-cols-3 gap-6 mb-8">

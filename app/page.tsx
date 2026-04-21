@@ -10,19 +10,21 @@ import Testimonials from "@/components/sections/Testimonials";
 import Team from "@/components/sections/Team";
 import FAQ from "@/components/sections/FAQ";
 import BookingCTA from "@/components/sections/BookingCTA";
+import BookingModalController from "@/components/booking/BookingModalController";
 export default function Home() {
   return (
     <>
       <Navbar />
+      <BookingModalController />
       <main>
         <Hero />
         <TrustBar />
         <Services />
-        <WhyUs />
         <Transformations />
         <HowItWorks />
-        <Testimonials />
         <Team />
+        <WhyUs />
+        <Testimonials />
         <FAQ />
         <BookingCTA />
       </main>

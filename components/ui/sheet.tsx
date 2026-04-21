@@ -8,7 +8,7 @@ const SheetTrigger = DialogPrimitive.Trigger;
 const SheetClose = DialogPrimitive.Close;
 const SheetPortal = DialogPrimitive.Portal;
 const SheetOverlay = React.forwardRef<React.ComponentRef<typeof DialogPrimitive.Overlay>, React.ComponentPropsWithoutRef<typeof DialogPrimitive.Overlay>>(
-  ({ className, ...props }, ref) => <DialogPrimitive.Overlay className={cn("fixed inset-0 z-50 bg-black/60 backdrop-blur-sm data-[state=open]:animate-fade-in", className)} {...props} ref={ref} />
+  ({ className, ...props }, ref) => <DialogPrimitive.Overlay className={cn("fixed inset-0 z-50 bg-black/60 data-[state=open]:animate-fade-in", className)} {...props} ref={ref} />
 );
 SheetOverlay.displayName = DialogPrimitive.Overlay.displayName;
 const SheetContent = React.forwardRef<React.ComponentRef<typeof DialogPrimitive.Content>, React.ComponentPropsWithoutRef<typeof DialogPrimitive.Content>>(
@@ -16,6 +16,7 @@ const SheetContent = React.forwardRef<React.ComponentRef<typeof DialogPrimitive.
     <SheetPortal>
       <SheetOverlay />
       <DialogPrimitive.Content ref={ref} className={cn("fixed inset-y-0 right-0 z-50 w-full max-w-sm bg-brand-cream shadow-2xl transition-transform duration-300 data-[state=open]:translate-x-0 data-[state=closed]:translate-x-full", className)} {...props}>
+        <DialogPrimitive.Title className="sr-only">Menu</DialogPrimitive.Title>
         <div className="flex items-center justify-between p-6 border-b border-brand-border">
           <span className="font-display text-xl text-brand-foreground">Menu</span>
           <SheetClose className="rounded-full p-2 hover:bg-brand-muted-bg transition-colors cursor-pointer"><X className="h-5 w-5 text-brand-muted" /></SheetClose>

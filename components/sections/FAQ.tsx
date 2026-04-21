@@ -15,7 +15,7 @@ export default function FAQ() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-80px" });
   return (
-    <section id="faq" className="py-20 md:py-28 bg-brand-muted-bg" ref={ref}>
+    <section id="faq" className="py-20 md:py-28 section-surface-pearl" ref={ref}>
       <div className="max-w-4xl mx-auto px-4 md:px-8">
         <motion.div className="text-center mb-14" initial={{ opacity: 0, y: 24 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6 }}>
           <span className="text-xs font-sans font-medium tracking-widest uppercase text-brand-bronze block mb-4">Common Questions</span>
@@ -26,6 +26,12 @@ export default function FAQ() {
           <Accordion type="single" collapsible className="space-y-0">
             {faqs.map((faq, i) => (<AccordionItem key={i} value={`item-${i}`}><AccordionTrigger>{faq.q}</AccordionTrigger><AccordionContent>{faq.a}</AccordionContent></AccordionItem>))}
           </Accordion>
+          <div className="mt-8 rounded-2xl border border-brand-border bg-white/70 px-5 py-4 text-sm text-brand-muted flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+            <p>Still have questions? Speak directly with our team.</p>
+            <a href="tel:7868827351" className="font-medium text-brand-bronze hover:text-brand-bronze-dark transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-bronze focus-visible:ring-offset-2 rounded-sm">
+              Call (786) 882-7351
+            </a>
+          </div>
         </motion.div>
       </div>
     </section>
